@@ -1,0 +1,213 @@
+body{
+    background-image: url(./sky.jpg);
+}
+.masterhead{
+    background-image: url(./Peace_Dove_1200x700.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+.parent{
+    display: flex;
+    flex-direction: row;
+    margin-left: 30%;
+    /* margin-top: 50%; */
+}
+.child{
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    margin: 10px;
+}
+p{
+    font-family: 'Fira Sans', sans-serif;
+    color: white;
+    font-size: 2em;
+    text-decoration: underline;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    margin-left: 40%; 
+ }
+ .b{
+    margin: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+ }
+ .b:hover{
+    height: 35px;
+    width: 110px;
+    box-shadow: 2px 2px 2px 2px;
+ }
+ .name{
+    color: rgb(250, 9, 250);
+    text-decoration: none;
+    font-family: cursive;
+ }
+ .remark{
+    margin-left: 40%;
+    display: grid;
+    width: 20vw;
+    color: rgb(238, 66, 95);
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(1, auto);
+ }
+.like{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    
+    background-image: linear-gradient(
+        blue,
+        rgb(56, 189, 241),
+        rgb(238, 66, 95),
+        purple
+    );
+}
+.like:hover{
+    transition: 2s;
+    transform: rotateZ(360deg);
+    width: 110px;
+    height: 110px;
+    /* background-color: yellow; */
+}
+.nolike{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: linear-gradient(
+        to top,
+        blue,
+        rgb(56, 189, 241),
+        rgb(238, 66, 95),
+        purple
+    );
+    animation-name: circle;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+}
+@keyframes circle {
+
+    100%{
+        transform: rotateZ(-360deg);
+        width: 100px;
+    }
+}
+/* .nolike:hover{
+    transition: 2s;
+    transform: rotateZ(-360deg);
+} */
+
+
+/* for Tab view */
+
+
+@media (min-width:620px) and (max-width:856px)
+{
+    .masterhead{
+      
+        background-repeat: repeat-y;
+    }
+    .buttons{
+        flex-direction: column;
+        
+    }
+    .parent{
+        flex-direction: column;
+    }
+    .name{
+        color: rgb(241, 24, 24);
+        font-size: 5em;
+        animation: name 5s linear ;
+        animation-iteration-count: infinite;
+
+    }   
+    @keyframes name{
+      10%{
+        transform: translateX(100vw);
+ }    
+       33%{
+        transform: translateY(-50vh);
+       }
+       66%{
+        transform: translateX(-50vh);
+       }
+       100%{
+        transform: translateX(0);
+       }
+    }
+    .remark{
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(2, auto);
+    } 
+    .b1{
+        background-color: greenyellow;
+        color: red;
+    }
+    .b2{
+        background-color: greenyellow;
+        color: red;
+    }
+    .child{
+        background-color: tomato;
+    }
+    .like{
+        width: 100px;
+        height: 100px;
+        margin: 50px;
+        background-image: linear-gradient(
+        to left,
+        blue,
+        rgb(56, 189, 241),
+        rgb(238, 66, 95),
+        purple
+    );
+    
+}
+.nolike{
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+}
+
+}
+/*  for mobile view */
+
+@media (min-width:360px) and (max-width:620px)
+{
+    .masterhead{
+      
+        background-repeat: repeat-y;
+    }
+    .buttons{
+        flex-direction: column;
+        
+    }
+    .parent{
+        flex-direction: column;
+    }
+    .name{
+        color: brown;
+
+    }   
+    .remark{
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(2, auto);
+    } 
+    .b1{
+        background-color: red;
+    }
+    .b2{
+        background-color: red;
+    }
+    .child{
+        background-color: palevioletred;
+        
+    }
+    p{
+        color: greenyellow;
+    }
+}
